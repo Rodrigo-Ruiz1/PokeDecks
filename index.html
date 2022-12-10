@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" href="./scripts/assets/pokeball.png">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- My CSS -->
+  <link rel="stylesheet" href="./scripts/style.css">
+  <!-- Google Fonts StyleSheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Comfortaa&family=Fredoka:wght@300&family=Press+Start+2P&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome Stylesheet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+  <!-- Tab Title -->
+  <title>PokéDecks</title>
+  <!-- Navigation -->
+
+<body>
+  <div class="topnav">
+    <img src="./scripts/assets/headerLogo.png" id="headerLogo" width="450px">
+  </div>
+  <div class="pageColumn">
+
+
+    <div id="pokedex">
+      <div id="left">
+        <div id="logo"></div>
+        <div id="bg_curve1_left"></div>
+        <div id="bg_curve2_left"></div>
+        <div id="curve1_left">
+          <div id="buttonGlass">
+            <div id="reflect"> </div>
+          </div>
+          <div id="miniButtonGlass1"></div>
+          <div id="miniButtonGlass2"></div>
+          <div id="miniButtonGlass3"></div>
+        </div>
+        <div id="curve2_left">
+          <div id="hinge">
+            <div id="hinge1"></div>
+            <div id="hinge2"></div>
+          </div>
+        </div>
+        <div id="screen">
+          <div id="topPicture">
+            <div id="buttontopPicture1"></div>
+            <div id="buttontopPicture2"></div>
+          </div>
+          
+
+          <div id="picture">
+            <img src="./scripts/assets/oak.png" class="pokePic" alt="Pokedex Image Screen" height="170">
+            <p class="pokeNum"></p>
+          </div>
+          <button id="buttonbottomPicture"><i class="fa-solid fa-shuffle" style="font-size: 12px; color:#222"></i></button>
+          <div id="speakers">
+            <div class="sp"></div>
+            <div class="sp"></div>
+            <div class="sp"></div>
+            <div class="sp"></div>
+          </div>
+        </div>
+        <button class="addToDeck" id="bigbluebutton" onclick="getCard()">Add</button>
+        <button id="barbutton1">Normal</button>
+        <div id="barbuttons1">
+          <p class="pokeName"></p>
+        </div>
+        <button id="barbutton2">Shiny</button>
+        <div id="cross">
+          <div id="leftcross" onclick="getNextPokemon(-1)">
+            <div id="leftT"></div>
+          </div>
+          <div id="topcross">
+            <div id="upT"></div>
+          </div>
+          <div id="rightcross" onclick="getNextPokemon(1)">
+            <div id="rightT"></div>
+          </div>
+          <div id="midcross">
+            <div id="midCircle"></div>
+          </div>
+          <div id="botcross">
+            <div id="downT"></div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div id="right">
+        <div id="input">
+          <p></p>
+        </div>
+
+        <div id="blueButtons1">
+
+          <button class="blueButton" onclick="addNumberToInput(0)">0</button>
+          <button class="blueButton" onclick="addNumberToInput(1)">1</button>
+          <button class="blueButton" onclick="addNumberToInput(2)">2</button>
+          <button class="blueButton" onclick="addNumberToInput(3)">3</button>
+          <button class="blueButton" onclick="addNumberToInput(4)">4</button>
+
+        </div>
+        <div id="blueButtons2">
+          <button class="blueButton" onclick="addNumberToInput(5)">5</button>
+          <button class="blueButton" onclick="addNumberToInput(6)">6</button>
+          <button class="blueButton" onclick="addNumberToInput(7)">7</button>
+          <button class="blueButton" onclick="addNumberToInput(8)">8</button>
+          <button class="blueButton" onclick="addNumberToInput(9)">9</button>
+
+        </div>
+        <div id="miniButtonGlass4"></div>
+        <div id="miniButtonGlass5"></div>
+
+        <button id="barbutton3"
+          onclick="getPokemonInfo(document.querySelector('#input').innerText), getPokemonDesc(document.querySelector('#input').innerText)">Submit</button>
+        <button id="barbutton4" onclick="clearInput()">Clear</button>
+        <div id="yellowBox1">
+          <div class="yellowText">
+            <p class="pokeHeight">Height: </p>
+            <p class="pokeWeight">Weight: </p>
+          </div>
+        </div>
+        <div id="yellowBox2">
+          <img class="pokeType1" style="width:75px;" src="">
+          <img class="pokeType2" style="width:75px;" src="">
+
+        </div>
+        <div id="bg_curve1_right"></div>
+        <div id="bg_curve2_right"></div>
+        <div id="curve1_right"></div>
+        <div id="curve2_right"></div>
+      </div>
+    </div>
+    <!-- =============== -->
+
+
+
+    <div class="deckHeader"><img src="./scripts/assets/myPokeDeck.png" id="pokeDeck">
+      
+      </div>
+      <div id="clearDeckButtonDiv">
+      <button onclick="clearDeck()" id="clearDeck">Clear Deck</button>
+      </div>
+
+    <div class=cardContainer>
+     
+      <div class="cardRow"></div>
+     
+    </div>
+  
+    <script src="./scripts/script.js"></script>
+    </div>
+    
+</div>
+
+
+</body>
+
+</html>
