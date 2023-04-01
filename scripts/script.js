@@ -124,7 +124,6 @@ async function getPokemonDesc(nextPokemonNum) {
       //    console.log(desc.language.name)
     }
   }
-  input.innerText+=getPokemonDesc()
 }
 
 function clearInput() {
