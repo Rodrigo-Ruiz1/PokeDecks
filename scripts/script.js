@@ -132,6 +132,8 @@ async function getPokemonDesc(nextPokemonNum) {
 function clearInput() {
   let pokemonID = document.querySelector('#input')
   pokemonID.innerHTML = ''
+  isShiny = false
+  isFront = true
 }
 function setGender(gen) {
   gender = gen;
@@ -188,29 +190,33 @@ function clickShinyColor() {
   document.getElementById("light-button-blue").classList.remove("off");
 }
 
-
-function toggleShiny() {
+function toggleSprite(button) {
   let pokePic = document.querySelector('.pokePic')
   console.log(sprites)
-  if (!isShiny && isFront) {
-    pokePic.setAttribute('src', `${sprites.front_shiny}`)
-  } else if (!isShiny && !isFront) {
-    pokePic.setAttribute('src', `${sprites.back_shiny}`)
-  } else if (isShiny && isFront) {
-    pokePic.setAttribute('src', `${sprites.front_default}`)
-  } else {
-    pokePic.setAttribute('src', `${sprites.back_default}`)
+  switch(button) {
+    case 1:
+      if (!isShiny && isFront) {
+        pokePic.setAttribute('src', `${sprites.front_shiny}`)
+      } else if (!isShiny && !isFront) {
+        pokePic.setAttribute('src', `${sprites.back_shiny}`)
+      } else if (isShiny && isFront) {
+        pokePic.setAttribute('src', `${sprites.front_default}`)
+      } else if (isShiny && !isFront){
+        pokePic.setAttribute('src', `${sprites.back_default}`)
+      }
+      isShiny = !isShiny
+      break
+    case 2:
+      if (!isShiny && isFront) {
+        pokePic.setAttribute('src', `${sprites.back_default}`)
+      } else if (!isShiny && !isFront) {
+        pokePic.setAttribute('src', `${sprites.front_default}`)
+      } else if (isShiny && isFront) {
+        pokePic.setAttribute('src', `${sprites.back_shiny}`)
+      } else if (isShiny && !isFront) {
+        pokePic.setAttribute('src', `${sprites.front_shiny}`)
+      }
+      isFront = !isFront
+      break
   }
-  isShiny = !isShiny
-}
-
-function toggleSpriteDirection() {
-  let pokePic = document.querySelector('.pokePic')
-  console.log(sprites)
-  if (isFront) {
-    pokePic.setAttribute('src', `${sprites.back_default}`)
-  } else {
-    pokePic.setAttribute('src', `${sprites.front_default}`)
-  }
-  isFront = !isFront
 }
